@@ -1,14 +1,16 @@
+const cors = require('cors')
 const express = require('express');
 //const { spawn } = require('child_process');
 const bodyParser = require('body-parser')
 var dao = require("./mongo-dao");
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
  
 
 app.use(express.json());
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
  
 app.get('/test', (req, res) => {

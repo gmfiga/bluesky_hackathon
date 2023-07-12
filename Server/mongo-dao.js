@@ -16,6 +16,6 @@ startup();
 
 // retrieve all books
 module.exports.findAllTest = function (callback) {
-    let dataPromise = collection.findAll({}).toArray();
+    let dataPromise = collection.find({}).toArray();
     dataPromise.then((books) => callback(books));
 };

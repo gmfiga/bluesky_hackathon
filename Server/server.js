@@ -1,7 +1,7 @@
 const express = require('express');
 //const { spawn } = require('child_process');
 const bodyParser = require('body-parser')
- 
+var dao = require("./mongo-dao");
 
 const app = express();
 const port = 3000;
@@ -12,7 +12,14 @@ app.use(express.json());
 app.use(bodyParser.json({ type: '*/*' }));
  
 app.get('/test', (req, res) => {
-    res.send('Hello World')
+    dao.findAllTest(
+        (data) => {
+            if (!data) {
+                res.status(404).end();
+            } else {
+                res.send(data);
+            }
+        })
 });
 
 /*

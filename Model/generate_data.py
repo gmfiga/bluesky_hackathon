@@ -54,7 +54,7 @@ def make_tasks(number_of_tasks_to_create: int) -> None:
         task = {
             'description':random.choice(task_descriptions),
             'completed_status':random.choice([True, False]),
-            # 'person_assigned':,
+            'person_assigned':faker.name(),
             'due_date':faker.date_this_year().strftime("%m/%d/%Y"),
             'estimated_duration':str(random.randint(1, 7)) + ' days',
         }

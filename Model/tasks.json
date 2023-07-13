@@ -1,62 +1,72 @@
 [
   {
-    "description": "Lead and manage a business process reengineering project to improve operational efficiency.",
-    "completed_status": true,
-    "due_date": "01/27/2023",
-    "estimated_duration": "2 days"
-  },
-  {
-    "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
-    "completed_status": false,
-    "due_date": "04/21/2023",
-    "estimated_duration": "7 days"
-  },
-  {
-    "description": "Develop and implement a diversity and inclusion initiative to foster an inclusive workplace culture.",
-    "completed_status": false,
-    "due_date": "06/14/2023",
-    "estimated_duration": "2 days"
-  },
-  {
     "description": "Conduct market research to identify target demographics and refine marketing messaging.",
-    "completed_status": false,
-    "due_date": "06/05/2023",
-    "estimated_duration": "4 days"
-  },
-  {
-    "description": "Conduct performance evaluations and provide feedback to team members.",
     "completed_status": true,
-    "due_date": "05/29/2023",
-    "estimated_duration": "4 days"
-  },
-  {
-    "description": "Manage and optimize pay-per-click (PPC) advertising campaigns to drive website traffic.",
-    "completed_status": true,
-    "due_date": "01/13/2023",
-    "estimated_duration": "6 days"
-  },
-  {
-    "description": "Develop and execute a search engine optimization (SEO) strategy to improve website visibility.",
-    "completed_status": false,
+    "person_assigned": "Ryan Gallagher",
     "due_date": "02/19/2023",
     "estimated_duration": "7 days"
   },
   {
-    "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
+    "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
     "completed_status": true,
-    "due_date": "01/23/2023",
+    "person_assigned": "Philip Kennedy",
+    "due_date": "03/15/2023",
+    "estimated_duration": "3 days"
+  },
+  {
+    "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
+    "completed_status": false,
+    "person_assigned": "Anna Johnson",
+    "due_date": "06/12/2023",
     "estimated_duration": "6 days"
   },
   {
-    "description": "Conduct training needs assessments to identify skill gaps and training requirements.",
+    "description": "Develop and execute a corporate social responsibility (CSR) initiative to support social and environmental causes.",
     "completed_status": false,
-    "due_date": "04/07/2023",
+    "person_assigned": "Lawrence Wang",
+    "due_date": "05/16/2023",
+    "estimated_duration": "3 days"
+  },
+  {
+    "description": "Coordinate and oversee user acceptance testing to validate system functionality.",
+    "completed_status": false,
+    "person_assigned": "Nathan Perez",
+    "due_date": "07/03/2023",
+    "estimated_duration": "1 days"
+  },
+  {
+    "description": "Develop and execute a customer retention program to improve loyalty and reduce churn.",
+    "completed_status": true,
+    "person_assigned": "Evan Johnson",
+    "due_date": "05/07/2023",
     "estimated_duration": "2 days"
   },
   {
-    "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
+    "description": "Create and deliver training programs to enhance employees' leadership and management skills.",
+    "completed_status": true,
+    "person_assigned": "Teresa James",
+    "due_date": "02/12/2023",
+    "estimated_duration": "6 days"
+  },
+  {
+    "description": "Develop and execute a digital marketing campaign to increase online brand presence.",
+    "completed_status": true,
+    "person_assigned": "Molly Rose",
+    "due_date": "05/29/2023",
+    "estimated_duration": "6 days"
+  },
+  {
+    "description": "Conduct competitor analysis to identify market gaps and develop a competitive advantage.",
     "completed_status": false,
-    "due_date": "05/28/2023",
-    "estimated_duration": "4 days"
+    "person_assigned": "Jon Hall",
+    "due_date": "02/14/2023",
+    "estimated_duration": "3 days"
+  },
+  {
+    "description": "Develop and implement key performance indicators (KPIs) to track project success and performance.",
+    "completed_status": true,
+    "person_assigned": "Paige Farley",
+    "due_date": "06/29/2023",
+    "estimated_duration": "1 days"
   }
 ]

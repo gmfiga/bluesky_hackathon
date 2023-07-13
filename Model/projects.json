@@ -1,247 +1,269 @@
 [
   {
     "id": 0,
-    "team_size": 3,
-    "budget": 13875.89,
+    "team_size": 4,
+    "budget": 6041.04,
     "workload": "medium",
-    "completion_time": "7 weeks",
+    "completion_time": "9 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
+          "description": "Create and deliver training programs to enhance employees' leadership and management skills.",
           "completed_status": true,
-          "due_date": "01/23/2023",
+          "person_assigned": "Teresa James",
+          "due_date": "02/12/2023",
           "estimated_duration": "6 days"
         }
       },
       {
         "task": {
-          "description": "Conduct performance evaluations and provide feedback to team members.",
+          "description": "Develop and execute a customer retention program to improve loyalty and reduce churn.",
           "completed_status": true,
-          "due_date": "05/29/2023",
-          "estimated_duration": "4 days"
+          "person_assigned": "Evan Johnson",
+          "due_date": "05/07/2023",
+          "estimated_duration": "2 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
+          "completed_status": false,
+          "person_assigned": "Anna Johnson",
+          "due_date": "06/12/2023",
+          "estimated_duration": "6 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Develop and execute a corporate social responsibility (CSR) initiative to support social and environmental causes.",
+          "completed_status": false,
+          "person_assigned": "Lawrence Wang",
+          "due_date": "05/16/2023",
+          "estimated_duration": "3 days"
         }
       }
     ]
   },
   {
     "id": 1,
-    "team_size": 2,
-    "budget": 15803.28,
-    "workload": "light",
-    "completion_time": "3 weeks",
-    "project_tasks": [
-      {
-        "task": {
-          "description": "Manage and optimize pay-per-click (PPC) advertising campaigns to drive website traffic.",
-          "completed_status": true,
-          "due_date": "01/13/2023",
-          "estimated_duration": "6 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Conduct performance evaluations and provide feedback to team members.",
-          "completed_status": true,
-          "due_date": "05/29/2023",
-          "estimated_duration": "4 days"
-        }
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "team_size": 10,
-    "budget": 15335.1,
-    "workload": "light",
-    "completion_time": "2 weeks",
-    "project_tasks": [
-      {
-        "task": {
-          "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
-          "completed_status": true,
-          "due_date": "01/23/2023",
-          "estimated_duration": "6 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Conduct performance evaluations and provide feedback to team members.",
-          "completed_status": true,
-          "due_date": "05/29/2023",
-          "estimated_duration": "4 days"
-        }
-      }
-    ]
-  },
-  {
-    "id": 3,
     "team_size": 9,
-    "budget": 12152.59,
+    "budget": 14342.56,
     "workload": "light",
-    "completion_time": "8 weeks",
+    "completion_time": "6 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
+          "description": "Develop and execute a corporate social responsibility (CSR) initiative to support social and environmental causes.",
           "completed_status": false,
-          "due_date": "05/28/2023",
-          "estimated_duration": "4 days"
+          "person_assigned": "Lawrence Wang",
+          "due_date": "05/16/2023",
+          "estimated_duration": "3 days"
         }
       },
       {
         "task": {
-          "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
-          "completed_status": false,
-          "due_date": "04/21/2023",
-          "estimated_duration": "7 days"
-        }
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "team_size": 5,
-    "budget": 11421.5,
-    "workload": "light",
-    "completion_time": "7 weeks",
-    "project_tasks": [
-      {
-        "task": {
-          "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
-          "completed_status": false,
-          "due_date": "04/21/2023",
-          "estimated_duration": "7 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Develop and implement a diversity and inclusion initiative to foster an inclusive workplace culture.",
-          "completed_status": false,
-          "due_date": "06/14/2023",
-          "estimated_duration": "2 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Lead and manage a business process reengineering project to improve operational efficiency.",
+          "description": "Develop and execute a customer retention program to improve loyalty and reduce churn.",
           "completed_status": true,
-          "due_date": "01/27/2023",
+          "person_assigned": "Evan Johnson",
+          "due_date": "05/07/2023",
           "estimated_duration": "2 days"
         }
       },
       {
         "task": {
-          "description": "Lead and manage a business process reengineering project to improve operational efficiency.",
+          "description": "Conduct market research to identify target demographics and refine marketing messaging.",
           "completed_status": true,
-          "due_date": "01/27/2023",
-          "estimated_duration": "2 days"
-        }
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "team_size": 4,
-    "budget": 6407.6,
-    "workload": "heavy",
-    "completion_time": "5 weeks",
-    "project_tasks": [
-      {
-        "task": {
-          "description": "Develop and implement a diversity and inclusion initiative to foster an inclusive workplace culture.",
-          "completed_status": false,
-          "due_date": "06/14/2023",
-          "estimated_duration": "2 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Develop and execute a search engine optimization (SEO) strategy to improve website visibility.",
-          "completed_status": false,
+          "person_assigned": "Ryan Gallagher",
           "due_date": "02/19/2023",
           "estimated_duration": "7 days"
         }
       },
       {
         "task": {
-          "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
-          "completed_status": false,
-          "due_date": "05/28/2023",
-          "estimated_duration": "4 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Conduct training needs assessments to identify skill gaps and training requirements.",
-          "completed_status": false,
-          "due_date": "04/07/2023",
+          "description": "Develop and execute a customer retention program to improve loyalty and reduce churn.",
+          "completed_status": true,
+          "person_assigned": "Evan Johnson",
+          "due_date": "05/07/2023",
           "estimated_duration": "2 days"
         }
       }
     ]
   },
   {
-    "id": 6,
-    "team_size": 2,
-    "budget": 14630.48,
-    "workload": "light",
+    "id": 2,
+    "team_size": 1,
+    "budget": 11569.16,
+    "workload": "medium",
     "completion_time": "7 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
-          "completed_status": false,
-          "due_date": "05/28/2023",
-          "estimated_duration": "4 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Conduct performance evaluations and provide feedback to team members.",
+          "description": "Develop and execute a customer retention program to improve loyalty and reduce churn.",
           "completed_status": true,
-          "due_date": "05/29/2023",
-          "estimated_duration": "4 days"
+          "person_assigned": "Evan Johnson",
+          "due_date": "05/07/2023",
+          "estimated_duration": "2 days"
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "team_size": 1,
+    "budget": 7376.05,
+    "workload": "heavy",
+    "completion_time": "9 weeks",
+    "project_tasks": [
+      {
+        "task": {
+          "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
+          "completed_status": true,
+          "person_assigned": "Philip Kennedy",
+          "due_date": "03/15/2023",
+          "estimated_duration": "3 days"
         }
       },
       {
         "task": {
-          "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
+          "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
           "completed_status": false,
-          "due_date": "05/28/2023",
-          "estimated_duration": "4 days"
+          "person_assigned": "Anna Johnson",
+          "due_date": "06/12/2023",
+          "estimated_duration": "6 days"
         }
       },
       {
         "task": {
-          "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
+          "description": "Develop and execute a corporate social responsibility (CSR) initiative to support social and environmental causes.",
           "completed_status": false,
-          "due_date": "04/21/2023",
+          "person_assigned": "Lawrence Wang",
+          "due_date": "05/16/2023",
+          "estimated_duration": "3 days"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "team_size": 6,
+    "budget": 6277.35,
+    "workload": "light",
+    "completion_time": "5 weeks",
+    "project_tasks": [
+      {
+        "task": {
+          "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
+          "completed_status": false,
+          "person_assigned": "Anna Johnson",
+          "due_date": "06/12/2023",
+          "estimated_duration": "6 days"
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "team_size": 7,
+    "budget": 15455.48,
+    "workload": "heavy",
+    "completion_time": "9 weeks",
+    "project_tasks": [
+      {
+        "task": {
+          "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
+          "completed_status": true,
+          "person_assigned": "Philip Kennedy",
+          "due_date": "03/15/2023",
+          "estimated_duration": "3 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Develop and implement key performance indicators (KPIs) to track project success and performance.",
+          "completed_status": true,
+          "person_assigned": "Paige Farley",
+          "due_date": "06/29/2023",
+          "estimated_duration": "1 days"
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "team_size": 7,
+    "budget": 19456.13,
+    "workload": "light",
+    "completion_time": "6 weeks",
+    "project_tasks": [
+      {
+        "task": {
+          "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
+          "completed_status": true,
+          "person_assigned": "Philip Kennedy",
+          "due_date": "03/15/2023",
+          "estimated_duration": "3 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Conduct market research to identify target demographics and refine marketing messaging.",
+          "completed_status": true,
+          "person_assigned": "Ryan Gallagher",
+          "due_date": "02/19/2023",
           "estimated_duration": "7 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
+          "completed_status": false,
+          "person_assigned": "Anna Johnson",
+          "due_date": "06/12/2023",
+          "estimated_duration": "6 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
+          "completed_status": true,
+          "person_assigned": "Philip Kennedy",
+          "due_date": "03/15/2023",
+          "estimated_duration": "3 days"
         }
       }
     ]
   },
   {
     "id": 7,
-    "team_size": 6,
-    "budget": 13380.89,
-    "workload": "heavy",
-    "completion_time": "6 weeks",
+    "team_size": 1,
+    "budget": 12489.4,
+    "workload": "medium",
+    "completion_time": "3 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
-          "completed_status": false,
-          "due_date": "05/28/2023",
-          "estimated_duration": "4 days"
+          "description": "Create and deliver training programs to enhance employees' leadership and management skills.",
+          "completed_status": true,
+          "person_assigned": "Teresa James",
+          "due_date": "02/12/2023",
+          "estimated_duration": "6 days"
         }
       },
       {
         "task": {
-          "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
-          "completed_status": true,
-          "due_date": "01/23/2023",
+          "description": "Coordinate and oversee user acceptance testing to validate system functionality.",
+          "completed_status": false,
+          "person_assigned": "Nathan Perez",
+          "due_date": "07/03/2023",
+          "estimated_duration": "1 days"
+        }
+      },
+      {
+        "task": {
+          "description": "Lead and facilitate focus groups to gather consumer insights and preferences.",
+          "completed_status": false,
+          "person_assigned": "Anna Johnson",
+          "due_date": "06/12/2023",
           "estimated_duration": "6 days"
         }
       }
@@ -249,66 +271,45 @@
   },
   {
     "id": 8,
-    "team_size": 4,
-    "budget": 2580.13,
+    "team_size": 3,
+    "budget": 2515.22,
     "workload": "medium",
-    "completion_time": "3 weeks",
+    "completion_time": "1 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Lead and manage a business process reengineering project to improve operational efficiency.",
+          "description": "Conduct user training sessions to ensure effective and efficient use of software applications.",
           "completed_status": true,
-          "due_date": "01/27/2023",
-          "estimated_duration": "2 days"
+          "person_assigned": "Philip Kennedy",
+          "due_date": "03/15/2023",
+          "estimated_duration": "3 days"
         }
       },
       {
         "task": {
-          "description": "Conduct training needs assessments to identify skill gaps and training requirements.",
-          "completed_status": false,
-          "due_date": "04/07/2023",
-          "estimated_duration": "2 days"
+          "description": "Conduct market research to identify target demographics and refine marketing messaging.",
+          "completed_status": true,
+          "person_assigned": "Ryan Gallagher",
+          "due_date": "02/19/2023",
+          "estimated_duration": "7 days"
         }
       }
     ]
   },
   {
     "id": 9,
-    "team_size": 6,
-    "budget": 6257.11,
-    "workload": "heavy",
-    "completion_time": "2 weeks",
+    "team_size": 7,
+    "budget": 16713.16,
+    "workload": "light",
+    "completion_time": "8 weeks",
     "project_tasks": [
       {
         "task": {
-          "description": "Develop and execute a search engine optimization (SEO) strategy to improve website visibility.",
+          "description": "Coordinate and oversee user acceptance testing to validate system functionality.",
           "completed_status": false,
-          "due_date": "02/19/2023",
-          "estimated_duration": "7 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Conduct market research to identify target demographics and refine marketing messaging.",
-          "completed_status": false,
-          "due_date": "06/05/2023",
-          "estimated_duration": "4 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
-          "completed_status": true,
-          "due_date": "01/23/2023",
-          "estimated_duration": "6 days"
-        }
-      },
-      {
-        "task": {
-          "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
-          "completed_status": false,
-          "due_date": "04/21/2023",
-          "estimated_duration": "7 days"
+          "person_assigned": "Nathan Perez",
+          "due_date": "07/03/2023",
+          "estimated_duration": "1 days"
         }
       }
     ]

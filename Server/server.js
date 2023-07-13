@@ -64,6 +64,21 @@ app.delete("/projects/:id", (req, res) => {
   });
 });
 
+app.put("/projects/:id", (req, res) => {
+  if (!req.body) {
+    req.statusCode = 500;
+    res.end();
+    return;
+  }
+  dao.updateProject(req.params.id, req.body, (data) => {
+    if (!data) {
+      res.status(404).end();
+    } else {
+      res.send(data);
+    }
+  });
+});
+
 /*
 app.post('/predict', (req, res) => {
     const data = req.body.data;

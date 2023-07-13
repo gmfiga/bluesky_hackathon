@@ -31,12 +31,19 @@ module.exports.findProject = function (id, callback) {
 module.exports.createProject = (project, callback) => {
   db.collection("projects")
     .insertOne(project)
-    .then((projects) => callback(projects));
+    .then((err) => callback(err));
 };
 
-// delete project
+//delete project
 module.exports.deleteProject = function (id, callback) {
   db.collection("projects")
     .deleteOne({ id: +id })
     .then((err) => callback(err));
+};
+
+//update project
+module.exports.updateProject = function (id, project, callback) {
+  db.collection("projects")
+    .findOneAndUpdate({ id: +id }, { $set: project })
+    .then((project) => callback(project));
 };

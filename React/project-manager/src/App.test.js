@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+function App() {
+    return (
+        <Router>
+            <Route path="/login" component={LoginForm} />
+            <Route path="/register" component={RegisterForm} />
+        </Router>
+    );
+}
+
+export default App;

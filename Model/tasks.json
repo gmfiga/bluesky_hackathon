@@ -1,0 +1,62 @@
+[
+  {
+    "description": "Lead and manage a business process reengineering project to improve operational efficiency.",
+    "completed_status": true,
+    "due_date": "01/27/2023",
+    "estimated_duration": "2 days"
+  },
+  {
+    "description": "Coordinate and facilitate requirements gathering workshops to elicit project requirements.",
+    "completed_status": false,
+    "due_date": "04/21/2023",
+    "estimated_duration": "7 days"
+  },
+  {
+    "description": "Develop and implement a diversity and inclusion initiative to foster an inclusive workplace culture.",
+    "completed_status": false,
+    "due_date": "06/14/2023",
+    "estimated_duration": "2 days"
+  },
+  {
+    "description": "Conduct market research to identify target demographics and refine marketing messaging.",
+    "completed_status": false,
+    "due_date": "06/05/2023",
+    "estimated_duration": "4 days"
+  },
+  {
+    "description": "Conduct performance evaluations and provide feedback to team members.",
+    "completed_status": true,
+    "due_date": "05/29/2023",
+    "estimated_duration": "4 days"
+  },
+  {
+    "description": "Manage and optimize pay-per-click (PPC) advertising campaigns to drive website traffic.",
+    "completed_status": true,
+    "due_date": "01/13/2023",
+    "estimated_duration": "6 days"
+  },
+  {
+    "description": "Develop and execute a search engine optimization (SEO) strategy to improve website visibility.",
+    "completed_status": false,
+    "due_date": "02/19/2023",
+    "estimated_duration": "7 days"
+  },
+  {
+    "description": "Coordinate and manage logistics for events, including venue selection and vendor coordination.",
+    "completed_status": true,
+    "due_date": "01/23/2023",
+    "estimated_duration": "6 days"
+  },
+  {
+    "description": "Conduct training needs assessments to identify skill gaps and training requirements.",
+    "completed_status": false,
+    "due_date": "04/07/2023",
+    "estimated_duration": "2 days"
+  },
+  {
+    "description": "Manage and coordinate the production and delivery of marketing collateral materials.",
+    "completed_status": false,
+    "due_date": "05/28/2023",
+    "estimated_duration": "4 days"
+  }
+]

@@ -1,16 +1,13 @@
 import { Panel, Placeholder } from 'rsuite';
 import Card from './card';
 const sample = require('./projects.json');
-const sample1= sample[0].project_tasks
+// const sample1= sample[0].project_tasks
 
 function Panels(props){
     return(
         <Panel style= { {color: 'black', border: 'solid'} } header= {props.title} bordered>
             {sample[props.id].project_tasks.map(task => {
-                console.log(task.task.completed_status)
-                console.log(props.done)
                 if (task.task.completed_status === props.done){
-                    
                     return Card(task)
                 }
                 })}

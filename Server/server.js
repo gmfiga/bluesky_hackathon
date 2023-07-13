@@ -1,27 +1,82 @@
-const cors = require('cors')
-const express = require('express');
+const cors = require("cors");
+const express = require("express");
 //const { spawn } = require('child_process');
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 var dao = require("./mongo-dao");
 
 const app = express();
 const port = 4000;
 
- 
-
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json({ type: '*/*' }));
- 
-app.get('/test', (req, res) => {
-    dao.findAllTest(
-        (data) => {
-            if (!data) {
-                res.status(404).end();
-            } else {
-                res.send(data);
-            }
-        })
+app.use(bodyParser.json({ type: "*/*" }));
+
+//get all projects
+app.get("/projects", (req, res) => {
+  dao.findAllProjects((data) => {
+    if (!data) {
+      res.status(404).end();
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+//get project by id
+app.get("/projects/:id", (req, res) => {
+  dao.findProject(req.params.id, (data) => {
+    if (!data) {
+      res.status(404).end();
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+//create new project
+app.post("/projects", (req, res) => {
+  if (!req.body) {
+    req.statusCode = 500;
+    res.end();
+    return;
+  }
+  dao.createProject(req.body, (err) => {
+    if (!err) {
+      res.send("Created Project");
+      res.end();
+    } else {
+      res.statusCode = 404;
+      res.end();
+    }
+  });
+});
+
+//delete project
+app.delete("/projects/:id", (req, res) => {
+  dao.deleteProject(req.params.id, (err) => {
+    if (!err) {
+      res.send("Deleted Project");
+      res.end();
+    } else {
+      res.statusCode = 404;
+      res.end();
+    }
+  });
+});
+
+app.put("/projects/:id", (req, res) => {
+  if (!req.body) {
+    req.statusCode = 500;
+    res.end();
+    return;
+  }
+  dao.updateProject(req.params.id, req.body, (data) => {
+    if (!data) {
+      res.status(404).end();
+    } else {
+      res.send(data);
+    }
+  });
 });
 
 /*
@@ -77,5 +132,5 @@ app.post('/predict', (req, res) => {
 */
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

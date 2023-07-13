@@ -1,21 +1,49 @@
-const mongodb = require("mongodb"); // mongo client library  
-const { MongoClient } = require('mongodb');
+const mongodb = require("mongodb"); // mongo client library
+const { MongoClient } = require("mongodb");
 
 const url = "mongodb://localhost:27017";
 const dbName = "final_project";
-const collectionName = "projects"
-let collection;
+let db;
 
 async function startup() {
-    let client = new MongoClient(url);
-    await client.connect();
-    var db = client.db(dbName)
-    collection = db.collection(collectionName);
+  let client = new MongoClient(url);
+  await client.connect();
+  db = client.db(dbName);
 }
 startup();
 
-// retrieve all books
-module.exports.findAllTest = function (callback) {
-    let dataPromise = collection.find({}).toArray();
-    dataPromise.then((books) => callback(books));
+// retrieve all projects
+module.exports.findAllProjects = function (callback) {
+  db.collection("projects")
+    .find({})
+    .toArray()
+    .then((projects) => callback(projects));
+};
+
+// retrive single project
+module.exports.findProject = function (id, callback) {
+  db.collection("projects")
+    .findOne({ id: +id })
+    .then((projects) => callback(projects));
+};
+
+//create a new project
+module.exports.createProject = (project, callback) => {
+  db.collection("projects")
+    .insertOne(project)
+    .then((err) => callback(err));
+};
+
+//delete project
+module.exports.deleteProject = function (id, callback) {
+  db.collection("projects")
+    .deleteOne({ id: +id })
+    .then((err) => callback(err));
+};
+
+//update project
+module.exports.updateProject = function (id, project, callback) {
+  db.collection("projects")
+    .findOneAndUpdate({ id: +id }, { $set: project })
+    .then((project) => callback(project));
 };

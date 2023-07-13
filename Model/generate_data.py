@@ -30,15 +30,22 @@ def make_projects(number_of_projects_to_create: int) -> None:
                 task = {"task": random.choice(tasks)}
                 project_tasks.append(task)
             return project_tasks
-
+        
+        start_time = faker.date_this_year(after_today=False, before_today=True)
+        end_time = faker.date_between(start_time,datetime.now())
+        completion_time = (end_time-start_time).days
+        
         project = {
             'id': i,
             'team_size':random.randint(1, 10),
             'budget': round(random.uniform(1000.00, 20000.00), 2),
             'workload':random.choice(['light', 'medium', 'heavy']),
-            'completion_time':str(random.randint(1, 10)) + ' weeks',
+            'start_time':start_time.strftime("%m/%d/%Y"),
+            'completed_time':end_time.strftime("%m/%d/%Y"),
+            'completion_time':str(completion_time) + ' days',
             'project_tasks': get_task()
         }
+
         projects.append(project)
 
     with open(projects_file_name, 'w') as file:
@@ -55,13 +62,10 @@ def make_tasks(number_of_tasks_to_create: int) -> None:
             'description':random.choice(task_descriptions),
             'completed_status':random.choice([True, False]),
             'person_assigned':faker.name(),
-            'due_date':faker.date_this_year().strftime("%m/%d/%Y"),
+            'due_date':faker.date_this_year(after_today=True, before_today=False).strftime("%m/%d/%Y"),
             'estimated_duration':str(random.randint(1, 7)) + ' days',
         }
         tasks.append(task)
-
-    with open(tasks_file_name, 'w') as file:
-        file.write(json.dumps(tasks, indent=2))
 
 # def make_products(number_of_products_to_create: int = 10) -> None:
 #     '''
@@ -110,7 +114,7 @@ def make_tasks(number_of_tasks_to_create: int) -> None:
 # make_products(30)
 # make_orders(250)
 
-make_tasks(10)
-make_projects(10)
+make_tasks(500)
+make_projects(1000)
 
 print("Data was created")

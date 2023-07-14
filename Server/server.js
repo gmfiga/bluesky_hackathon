@@ -60,7 +60,7 @@ app.post("/projects", (req, res) => {
       res.send(data);
       res.end();
     } else {
-      res.status(500);
+      res.status(500).send(err);
     }
   });
 });

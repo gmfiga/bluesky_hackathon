@@ -1,6 +1,6 @@
 import Panels from "./panel";
 import "./App.css";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Route, Routes, Navigate, Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Panel } from "rsuite";
 
@@ -8,6 +8,11 @@ function Tasks(props) {
   let { id } = useParams();
 
   const [projectTasks, setProjectTasks] = useState([]);
+  
+    const navigate = useNavigate()
+  function handleClick(){
+    navigate(`/add_task/${id}`);
+  }
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
@@ -38,6 +43,7 @@ function Tasks(props) {
   return (
     <div className="flex flex-col w-full h-full justify-center items-center">
       <h1>Project {id}</h1>
+      <button onClick={handleClick}> Add Task</button>
       <div className="flex flex-col items-center justify-center w-full h-full ">
         <Panels
           title="To-Do"

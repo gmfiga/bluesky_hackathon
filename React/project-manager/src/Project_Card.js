@@ -12,15 +12,33 @@ function Project_Card(props) {
   const handleClick = () => {
     navigate(`/${props.project.id}`);
   };
+
+  // const clickDelete = () => {
+  //   const requestMetadata = {
+  //     method: 'DELETE',
+  //     headers: {
+  //         'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({})
+  // };
+
+  // fetch(`http://localhost:4000/projects/${props.project.id}`, requestMetadata)
+  //     .then(res => res.json())
+  //     .then(r => console.log(r))
+      
+  //   navigate('/')
+  // };
   return (
     <>
       <div
         class="max-w-sm rounded m-2 overflow-hidden shadow-lg hover:scale-[1.05] hover:transition hover:cursor-pointer"
-        onClick={handleClick}
+        
       >
         <img
           class="w-full"
           src="https://thevanitymetric.com/content/images/size/w2000/2018/10/random-startup-ideas-generator.jpg"
+          alt="Sunset in the mountains"
+          onClick={handleClick}
         />
         <div class="flex flex-row font-bold w-full text-xl mb-2">
           <span className="flex m-2 flex-1 w-full">
@@ -34,7 +52,7 @@ function Project_Card(props) {
                 searchparams.get("role") === "manager"
                   ? "bg-red-400 hover:scale-110"
                   : "bg-gray-400"
-              }`}
+              }`} onClick= {() => props.onDelete(props.project.id)}
             />
             <img
               src="https://www.svgrepo.com/show/520705/edit.svg"

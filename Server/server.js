@@ -40,13 +40,12 @@ app.post("/projects", (req, res) => {
     res.end();
     return;
   }
-  dao.createProject(req.body, (err) => {
-    if (!err) {
-      res.send("Created Project");
+  dao.createProject(req.body, (data) => {
+    if (data) {
+      res.send(data);
       res.end();
     } else {
-      res.statusCode = 404;
-      res.end();
+      res.status(500).send(err);
     }
   });
 });

@@ -30,8 +30,13 @@ module.exports.findProject = function (id, callback) {
 //create a new project
 module.exports.createProject = (project, callback) => {
   db.collection("projects")
-    .insertOne(project)
-    .then((err) => callback(err));
+    .count()
+    .then((data) => {
+      project.id = data;
+      db.collection("projects")
+        .insertOne(project)
+        .then((data) => callback(data));
+    });
 };
 
 //delete project

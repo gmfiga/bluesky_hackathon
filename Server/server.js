@@ -1,6 +1,6 @@
 const cors = require("cors");
 const express = require("express");
-//const { spawn } = require('child_process');
+const { spawn } = require("child_process");
 const bodyParser = require("body-parser");
 var dao = require("./mongo-dao");
 const mongodb = require("mongodb");
@@ -55,13 +55,12 @@ app.post("/projects", (req, res) => {
     res.end();
     return;
   }
-  dao.createProject(req.body, (err) => {
-    if (!err) {
+  dao.createProject(req.body, (data) => {
+    if (data) {
       res.send("Created Project");
       res.end();
     } else {
-      res.statusCode = 404;
-      res.end();
+      res.status(500);
     }
   });
 });
@@ -105,57 +104,45 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-/*
-app.post('/predict', (req, res) => {
-    const data = req.body.data;
+app.post("/predict", (req, res) => {
+  const data = req.body.data;
 
-    // Spawn a child process to execute the predict.py script
-    const pythonScript = spawn('python', ['predict.py']);
+  // Spawn a child process to execute the predict.py script
+  const pythonScript = spawn("python", ["predict.py"]);
 
-    // Send the data to the predict.py script via stdin
-    //console.log(data)
-    //console.log(JSON.stringify(data))
-    pythonScript.stdin.write(JSON.stringify(data));
-    pythonScript.stdin.end();
+  // Send the data to the predict.py script via stdin
+  //console.log(data)
+  //console.log(JSON.stringify(data))
+  pythonScript.stdin.write(JSON.stringify(data));
+  pythonScript.stdin.end();
 
- 
+  let predictionData = "";
 
-    let predictionData = '';
+  // Collect the predicted data from stdout of the predict.py script
+  pythonScript.stdout.on("data", (data) => {
+    //console.log(data.toString())
+    predictionData += data.toString();
+    predictionData = predictionData.slice(0, -2);
+  });
 
- 
+  // Handle the completion of the predict.py script
+  pythonScript.on("close", (code) => {
+    // console.log(code)
+    if (code === 0) {
+      // Parse the predicted data
+      console.log({ predictionData });
+      const predictions = JSON.parse(predictionData);
+      // console.log(predictions)
 
-    // Collect the predicted data from stdout of the predict.py script
-    pythonScript.stdout.on('data', (data) => {
-        //console.log(data.toString())
-        predictionData += data.toString();
-        predictionData = predictionData.slice(0, -2)
-    });
-
-    
- 
-
-    // Handle the completion of the predict.py script
-    pythonScript.on('close', (code) => {
-       // console.log(code)
-        if (code === 0) {
-            // Parse the predicted data
-            console.log({predictionData})
-            const predictions = JSON.parse(predictionData);
-           // console.log(predictions)
- 
-
-            // Return the predictions as the response
-            res.send(predictions);
-        } else {
-            // Return an error response
-            //console.log(code)
-            res.status(500).json({ error: 'Prediction failed' });
-        }
-    });
+      // Return the predictions as the response
+      res.send(predictions);
+    } else {
+      // Return an error response
+      //console.log(code)
+      res.status(500).json({ error: "Prediction failed" });
+    }
+  });
 });
-
- 
-*/
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -98,7 +98,6 @@ app.put("/projects/:id", (req, res) => {
 app.post("/api/login", async (req, res) => {
   const email = req.body.email;
   const user = await collection.findOne({ email: email });
-  console.log(req.body, email, user);
   if (user) {
     res.json(user);
   } else {

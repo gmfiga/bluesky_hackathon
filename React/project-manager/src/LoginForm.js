@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // import useNavigate
+import { useNavigate, createSearchParams } from "react-router-dom"; // import useNavigate
 import "./LoginForm.css";
 
 function LoginForm() {
@@ -25,10 +25,16 @@ function LoginForm() {
       .then((data) => {
         if (data.role === "manager") {
           alert("Logged in as Manager");
-          navigate("/projects"); // navigate to TestPage
+          navigate({
+            pathname: "/projects",
+            search: createSearchParams({ role: data.role }).toString(),
+          });
         } else if (data.role === "non-manager") {
           alert("Logged in as a Non-Manager");
-          navigate("/projects"); // navigate to TestPage
+          navigate({
+            pathname: "/projects",
+            search: createSearchParams({ role: data.role }).toString(),
+          });
         } else {
           alert("Invalid role");
         }

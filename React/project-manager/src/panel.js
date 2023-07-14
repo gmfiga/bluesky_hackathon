@@ -14,9 +14,6 @@ function Panels(props) {
       .then((data) => setProjectTasks(data.project_tasks));
   }, []);
 
-  useEffect(() => {
-    console.log(projectTasks);
-  }, [projectTasks]);
   return (
     // <Panel style= { {color: 'black', border: 'solid'} } header= {props.title} bordered>
     //     {sample[props.id].project_tasks.map(task => {

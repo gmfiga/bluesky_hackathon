@@ -1,19 +1,32 @@
-import { Panel, Placeholder } from 'rsuite';
-import Card from './card';
-const sample = require('./projects.json');
+import { Panel, Placeholder } from "rsuite";
+import Card from "./card";
+const sample = require("./projects.json");
 // const sample1= sample[0].project_tasks
 
-function Panels(props){
-    return(
-        <Panel style= { {color: 'black', border: 'solid'} } header= {props.title} bordered>
-            {sample[props.id].project_tasks.map(task => {
-                if (task.task.completed_status === props.done){
-                    return Card(task)
-                }
-                })}
-        </Panel>
-    )
-};
+function Panels(props) {
+  return (
+    // <Panel style= { {color: 'black', border: 'solid'} } header= {props.title} bordered>
+    //     {sample[props.id].project_tasks.map(task => {
+    //         if (task.task.completed_status === props.done){
+    //             return Card(task)
+    //         }
+    //         })}
+    // </Panel>
+
+    <div className="flex flex-row w-full">
+      <div className="flex flex-col">
+        <h3 className="m-4">{props.title}</h3>
+        <div className="flex m-4 flex-row">
+          {sample[props.id].project_tasks.map((task) => {
+            if (task.task.completed_status === props.done) {
+              return Card(task);
+            }
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -53,7 +66,5 @@ function Panels(props){
 //   </Row>
 //     )
 // }
-
-
 
 export default Panels;

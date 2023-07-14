@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<Projects />} />
       <Route path="/:id" element={<Tasks />} />
       <Route path="/add_project" element={<Add_Project />} />
-      <Route path="/add_task" element={<Add_Tasks />} />
+      <Route path="/add_task/:id" element={<Add_Tasks />} />
     </Routes>
   );
 }

@@ -47,3 +47,10 @@ module.exports.updateProject = function (id, project, callback) {
     .findOneAndUpdate({ id: +id }, { $set: project })
     .then((project) => callback(project));
 };
+
+//login
+// module.exports.authenticate = function (email, callback) {
+//   db.collection("users")
+//     .findOne({ email: email })
+//     .then((user) => callback(user));
+// };

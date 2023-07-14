@@ -1,11 +1,11 @@
-// LoginForm.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // import useNavigate
+import './LoginForm.css';
 
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
+    const navigate = useNavigate(); // create navigate function
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,38 +18,42 @@ function LoginForm() {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Authentication failed');
+                throw new Error('Network response was not ok');
             }
             return response.json();
         })
-        .then(user => {
-            if (user.role === 'manager') {
+        .then(data => {
+            if (data.role === 'manager') {
                 alert('Logged in as Manager');
-            } else {
+                navigate('/project'); // navigate to TestPage
+            } else if (data.role === 'non-manager') {
                 alert('Logged in as a Non-Manager');
+                navigate('/project'); // navigate to TestPage
+            } else {
+                alert('Invalid role');
             }
         })
         .catch(error => {
-            setMessage(error.message);
+            console.error('Error:', error);
+            alert('Login failed');
         });
     };
 
     return (
         <div className="login-form">
-            <h2>Login</h2>
+            <h1 className="welcome-header">Welcome!</h1>
+            <h2 className="login-header">Log in to Project Management App</h2>
             <form onSubmit={handleSubmit}>
-                <label>
+                <label className="form-label">
                     Email:
                     <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} />
                 </label>
-                <label>
+                <label className="form-label">
                     Password:
                     <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label>
-                <input type="submit" value="Login" />
+                <input type="submit" value="Submit" />
             </form>
-            {message && <p>{message}</p>}
-            <Link to="/register">Register</Link>
         </div>
     );
 }

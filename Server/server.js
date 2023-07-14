@@ -52,9 +52,9 @@ app.post("/projects", (req, res) => {
 
 //delete project
 app.delete("/projects/:id", (req, res) => {
-  dao.deleteProject(req.params.id, (err) => {
-    if (!err) {
-      res.send("Deleted Project");
+  dao.deleteProject(req.params.id, (data) => {
+    if (data) {
+      res.send(data);
       res.end();
     } else {
       res.statusCode = 404;

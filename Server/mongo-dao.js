@@ -43,7 +43,7 @@ module.exports.createProject = (project, callback) => {
 module.exports.deleteProject = function (id, callback) {
   db.collection("projects")
     .deleteOne({ id: +id })
-    .then((err) => callback(err));
+    .then((data) => callback(data));
 };
 
 //update project

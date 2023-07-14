@@ -12,6 +12,24 @@ function Projects() {
       .then((data) => setProjects(data));
   }, []);
 
+  const clickDelete = async (id_d) => {
+    const requestMetadata = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
+    };
+
+    await fetch(`http://localhost:4000/projects/${id_d}`, requestMetadata)
+      .then(res => res.json())
+      .then(r => console.log(r))
+
+    fetch("http://localhost:4000/projects", { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => setProjects(data))
+  }
+
   return (
     // <Container>
     //     <Header>Current Projects</Header>
@@ -23,7 +41,7 @@ function Projects() {
       <div className="flex items-center justify-center flex-wrap w-full h-full">
         {/* {sample.map((proj) => Project_Card(proj))} */}
         {projects?.map((proj) => {
-          return <Project_Card project={proj} />;
+          return <Project_Card project={proj} onDelete={clickDelete} />;
         })}
       </div>
     </div>

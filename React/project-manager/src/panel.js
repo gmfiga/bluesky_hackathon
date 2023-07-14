@@ -37,6 +37,7 @@ function Panels(props) {
         </div>
       </div>
     </div>
+    
   );
 }
 

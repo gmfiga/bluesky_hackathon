@@ -78,6 +78,7 @@ app.delete("/projects/:id", (req, res) => {
   });
 });
 
+//
 app.put("/projects/:id", (req, res) => {
   if (!req.body) {
     req.statusCode = 500;

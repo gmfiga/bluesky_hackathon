@@ -1,19 +1,19 @@
+import { useState } from "react";
 import { Panel, Placeholder, Row, Col } from "rsuite";
 
 function Card(props) {
-  return (
-    //   <Panel shaded bordered bodyFill style={{ display: 'inline-block', width: 140 }}>
-    //   <img src="https://via.placeholder.com/240x240" height="70" />
-    //   <Panel header="RSUITE">
-    //     <p>
-    //       <small>
-    //         {props.task.description}
-    //       </small>
-    //     </p>
-    //   </Panel>
-    // </Panel>
+  const [status, setStatus] = useState();
 
-    <div class="max-w-sm rounded m-2 overflow-hidden shadow-lg hover:scale-[1.05] hover:transition hover:cursor-pointer relative">
+  function handleClick() {
+    setStatus(!props.task.completed_status);
+    props.callback(props.task.description);
+  }
+
+  return (
+    <div
+      onClick={handleClick}
+      class="max-w-sm rounded m-2 overflow-hidden shadow-lg hover:scale-[1.05] hover:transition hover:cursor-pointer relative"
+    >
       {props.task.completed_status ? (
         <img
           src="https://www.svgrepo.com/show/524415/check-circle.svg"

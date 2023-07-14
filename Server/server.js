@@ -57,7 +57,7 @@ app.post("/projects", (req, res) => {
   }
   dao.createProject(req.body, (data) => {
     if (data) {
-      res.send("Created Project");
+      res.send(data);
       res.end();
     } else {
       res.status(500);
@@ -105,40 +105,34 @@ app.post("/api/login", async (req, res) => {
 });
 
 app.post("/predict", (req, res) => {
-  const data = req.body.data;
+  const input = req.body;
 
+  const data = JSON.stringify(input);
+  console.log(data);
   // Spawn a child process to execute the predict.py script
   const pythonScript = spawn("python", ["predict.py"]);
 
   // Send the data to the predict.py script via stdin
-  //console.log(data)
-  //console.log(JSON.stringify(data))
-  pythonScript.stdin.write(JSON.stringify(data));
+  pythonScript.stdin.write(data);
   pythonScript.stdin.end();
 
   let predictionData = "";
 
   // Collect the predicted data from stdout of the predict.py script
   pythonScript.stdout.on("data", (data) => {
-    //console.log(data.toString())
     predictionData += data.toString();
-    predictionData = predictionData.slice(0, -2);
   });
 
   // Handle the completion of the predict.py script
   pythonScript.on("close", (code) => {
-    // console.log(code)
     if (code === 0) {
       // Parse the predicted data
-      console.log({ predictionData });
-      const predictions = JSON.parse(predictionData);
-      // console.log(predictions)
+      // const predictions = JSON.parse(predictionData);
 
       // Return the predictions as the response
-      res.send(predictions);
+      res.send(predictionData);
     } else {
       // Return an error response
-      //console.log(code)
       res.status(500).json({ error: "Prediction failed" });
     }
   });

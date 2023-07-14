@@ -8,10 +8,11 @@ with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Read data from stdin
-data = sys.stdin.read()
+json_data = sys.stdin.read()
+data = json.loads(json_data)
+glucose = [item['Glucose'] for item in data]
 
-
-# Perform the prediction
-df = pd.DataFrame(data, columns=['Glucose'])
+# # Perform the prediction
+df = pd.DataFrame(glucose, columns=['Glucose'])
 predictions = model.predict(df)
 print(predictions)

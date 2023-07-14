@@ -8,7 +8,7 @@ function Project_Card(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/${props.id}`);
+    navigate(`/${props.project.id}`);
   };
   return (
     <>
@@ -47,7 +47,9 @@ function Project_Card(props) {
           alt="Sunset in the mountains"
         />
         <div class="flex flex-row font-bold w-full text-xl mb-2">
-          <span className="flex m-2 flex-1 w-full">Project {props.id}</span>
+          <span className="flex m-2 flex-1 w-full">
+            Project {props.project.id}
+          </span>
           <div className="flex flex-[0.5] w-full">
             <img
               src="https://www.svgrepo.com/show/529257/trash-bin-trash.svg"
@@ -62,20 +64,20 @@ function Project_Card(props) {
         <div class="px-6 pb-2">
           <span
             class={`inline-block rounded-full ${
-              props.workload === "light"
+              props.project.workload === "light"
                 ? "bg-green-200"
-                : props.workload === "medium"
+                : props.project.workload === "medium"
                 ? "bg-yellow-200"
                 : "bg-red-200"
             } px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2`}
           >
-            {props.workload}
+            {props.project.workload}
           </span>
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            ${props.budget}
+            ${props.project.budget}
           </span>
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            {props.team_size} people
+            {props.project.team_size} people
           </span>
         </div>
       </div>

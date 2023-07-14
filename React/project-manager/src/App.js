@@ -8,14 +8,6 @@ import { Route, Routes, Navigate, Link } from "react-router-dom";
 import "rsuite/dist/rsuite.min.css";
 
 function App() {
-  const [project, setProject] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:4000/test")
-      .then((response) => response.json())
-      .then((data) => setProject(data))
-      .then(console.log(project))
-      .catch((error) => console.error("Error:", error));
-  }, []);
   return (
     <Routes>
       <Route path="/" element={<Projects />} />

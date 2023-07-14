@@ -1,9 +1,22 @@
 import { Panel, Placeholder } from "rsuite";
 import Card from "./card";
+import { useState, useEffect } from "react";
+
 const sample = require("./projects.json");
 // const sample1= sample[0].project_tasks
 
 function Panels(props) {
+  const [projectTasks, setProjectTasks] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/projects/${props.id}`)
+      .then((response) => response.json())
+      .then((data) => setProjectTasks(data.project_tasks));
+  }, []);
+
+  useEffect(() => {
+    console.log(projectTasks);
+  }, [projectTasks]);
   return (
     // <Panel style= { {color: 'black', border: 'solid'} } header= {props.title} bordered>
     //     {sample[props.id].project_tasks.map(task => {
@@ -17,10 +30,9 @@ function Panels(props) {
       <div className="flex flex-col">
         <h3 className="m-4">{props.title}</h3>
         <div className="flex m-4 flex-row">
-          {sample[props.id].project_tasks.map((task) => {
-            if (task.task.completed_status === props.done) {
-              return Card(task);
-            }
+          {projectTasks?.map((task) => {
+            if (task.task.completed_status === props.done)
+              return <Card task={task.task} />;
           })}
         </div>
       </div>

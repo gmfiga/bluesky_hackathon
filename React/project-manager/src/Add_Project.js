@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Route, Routes, Navigate, Link, useNavigate } from "react-router-dom";
+import { Route, Routes, Navigate, Link, useNavigate, createSearchParams, useSearchParams } from "react-router-dom";
 
 function Add_Project() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
+    const [searchparams] = useSearchParams();
   
     const handleChange = (event) => {
       const name = event.target.name;
@@ -18,7 +19,8 @@ function Add_Project() {
             budget: inputs.budget,
             workload: inputs.workload,
             start_time: inputs.stime,
-            completion_time: inputs.etime
+            completion_time: inputs.etime,
+            project_tasks: []
         }
         const requestMetadata = {
             method: 'POST',
@@ -34,7 +36,8 @@ function Add_Project() {
             //.then(recipes => {
               //  this.setState({ recipes });
             
-      navigate(`/`);
+      navigate({pathname: `/projects`,
+      search: createSearchParams({ role: searchparams.get("role") }).toString()});
     }
   
     return (

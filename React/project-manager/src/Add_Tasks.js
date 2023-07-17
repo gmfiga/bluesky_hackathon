@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes, Navigate, Link, useNavigate, useParams } from "react-router-dom";
+import { Route, Routes, Navigate, Link, useNavigate, useParams, useSearchParams, createSearchParams } from "react-router-dom";
 
 function Add_Tasks() {
     const [inputs, setInputs] = useState({});
     const [projectTasks, setProjectTasks] = useState([]);
     const navigate = useNavigate()
+    const [searchparams] = useSearchParams();
     let { id } = useParams();
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
@@ -47,7 +48,8 @@ function Add_Tasks() {
         //.then(recipes => {
           //  this.setState({ recipes });
         
-  navigate(`/${id}`);
+          navigate({pathname: `/${id}`,
+          search: createSearchParams({ role: searchparams.get("role") }).toString()});
     }
   
     return (

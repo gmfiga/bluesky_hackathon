@@ -1,11 +1,18 @@
-import { useState } from 'react';
-import { Route, Routes, Navigate, Link, useNavigate, createSearchParams, useSearchParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Route, Routes, Navigate, Link, useNavigate, createSearchParams, useSearchParams, useParams } from "react-router-dom";
 
-function Add_Project() {
+function Edit_Project() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
     const [searchparams] = useSearchParams();
-  
+    let { id } = useParams();
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/projects/${id}`)
+          .then((response) => response.json())
+          .then((data) => setInputs(data));
+      }, []);
+    
     const handleChange = (event) => {
       const name = event.target.name;
       const value = event.target.value;
@@ -15,22 +22,21 @@ function Add_Project() {
     const handleSubmit = (event) => {
       event.preventDefault();
         var data = {
-            team_size: inputs.tsize,
+            team_size: inputs.team_size,
             budget: inputs.budget,
             workload: inputs.workload,
-            start_time: inputs.stime,
-            completed_time: inputs.etime,
-            project_tasks: []
+            start_time: inputs.start_time,
+            completed_time: inputs.completed_time
         }
         const requestMetadata = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         };
     
-        fetch("http://localhost:4000/projects", requestMetadata)
+        fetch(`http://localhost:4000/projects/${id}`, requestMetadata)
             .then(res => res.json())
             .then(r => console.log(r))
             //.then(recipes => {
@@ -53,8 +59,8 @@ function Add_Project() {
         <label>Enter your team size:
           <input 
             type="number" 
-            name="tsize" 
-            value={inputs.tsize || ""} 
+            name="team_size" 
+            value={inputs.team_size || ""} 
             onChange={handleChange}
           />
           </label><br></br>
@@ -68,17 +74,17 @@ function Add_Project() {
           </label><br></br>
           <label>Enter start time: 
           <input 
-            type="date" 
-            name="stime" 
-            value={inputs.stime || ""} 
+            type="text" 
+            name="start_time" 
+            value={inputs.start_time || ""} 
             onChange={handleChange}
           />
           </label><br></br>
           <label>Enter due time: 
           <input 
-            type="date" 
-            name="etime" 
-            value={inputs.etime || ""} 
+            type="text" 
+            name="completed_time" 
+            value={inputs.completed_time || ""} 
             onChange={handleChange}
           />
           </label><br></br>
@@ -86,4 +92,4 @@ function Add_Project() {
       </form>
     )
   }
-export default Add_Project;
+export default Edit_Project;

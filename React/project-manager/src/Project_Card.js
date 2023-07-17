@@ -14,6 +14,13 @@ function Project_Card(props) {
     search: createSearchParams({ role: searchparams.get("role") }).toString()});
   };
 
+  const handleEditClick = () => {
+    if (searchparams.get("role") === "manager"){
+      navigate({pathname: `/edit_project/${props.project.id}`,
+      search: createSearchParams({ role: searchparams.get("role") }).toString()});
+    }
+  };
+
   // const clickDelete = () => {
   //   const requestMetadata = {
   //     method: 'DELETE',
@@ -61,7 +68,7 @@ function Project_Card(props) {
                 searchparams.get("role") === "manager"
                   ? "bg-blue-400 hover:scale-110"
                   : "bg-gray-400"
-              }`}
+              }`} onClick = {() => handleEditClick()}
             />
           </div>
         </div>

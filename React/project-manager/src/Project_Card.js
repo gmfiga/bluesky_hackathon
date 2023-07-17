@@ -1,7 +1,7 @@
 import { Panel, Placeholder, Row, Col } from "rsuite";
 import Tasks from "./Tasks";
 import { Route, Routes, Navigate, Link, useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, createSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 const sample = require("./projects.json");
 
@@ -10,7 +10,8 @@ function Project_Card(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/${props.project.id}`);
+    navigate({pathname: `/${props.project.id}`,
+    search: createSearchParams({ role: searchparams.get("role") }).toString()});
   };
 
   // const clickDelete = () => {
